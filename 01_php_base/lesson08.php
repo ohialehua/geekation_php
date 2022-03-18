@@ -4,6 +4,6 @@
 function plus($n)
 {
     $n++;
-    echo $n;
+    return $n;
 }
 plus(8);
