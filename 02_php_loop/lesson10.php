@@ -29,6 +29,26 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 <title>数字並び替えプログラム</title>
 </head>
 <body>
+    <?php
+    for ($i = 0; $i < count($arr); $i++) {
+        //今回iの範囲は0~8まで
+        for ($n = 1; $n < count($arr); $n++) {
+            //今回nの範囲は1~8まで
+            if ($arr[$n-1] > $arr[$n]) {
+                //n-1番目の要素がn番目の要素より大きいのなら
+                $sort = $arr[$n];
+                //sort変数にn番目の要素を格納
+                $arr[$n] = $arr[$n-1];
+                //n番目の要素にn-1番目の要素を上書き
+                $arr[$n-1] = $sort;
+                //n-1番目の要素にsort変数に格納していたn番目の要素を上書き
+            }
+        }
+    }
+    foreach ($arr as $value) {
+        echo $value.", ";
+    }
+    ?>
     <!-- ここに並び替え後を表示 -->
 </body>
 </html>
