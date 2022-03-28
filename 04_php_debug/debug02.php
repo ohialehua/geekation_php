@@ -3,6 +3,9 @@
 // デバック練習
 // 氏名入力時に入力内容が表示されるようにプログラムを完成させてください。
 
+//クラスの名前空間を追加
+namespace SelfIntroduction;
+
 $createAgeGroup = function () {
     $maxAge = 70;
     $minAge = 18;
@@ -15,11 +18,13 @@ $createAgeGroup = function () {
 
 class SelfIntroduction
 {
+    //property
     private $lastName;
     private $firstName;
     private $age;
     private $hobby;
 
+    //constructor
     public function __construct(
         string $lastName,
         string $firstName,
@@ -32,6 +37,7 @@ class SelfIntroduction
         $this->hobby        = $hobby;
     }
 
+    //method
     public function getFullName()
     {
         return $this->lastName.$this->firstName;
@@ -53,6 +59,8 @@ if (! empty($_POST)) {
     $firstName        = $_POST['first_name'];
     $age              = $_POST['age'];
     $hobby            = $_POST['hobby'];
+    //インスタンスを生成
+    $selfIntroduction = new SelfIntroduction($lastName, $firstName, $age, $hobby);
     if ($selfIntroduction) {
         echo '私の名前は'.$selfIntroduction->getFullName().'年齢は'.$selfIntroduction->getAge().'です。';
         echo '<br>';
